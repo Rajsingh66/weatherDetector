@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-// https://vitejs.dev/config/
+// Use repo subpath on GitHub Pages, root path elsewhere (Railway/local).
 export default defineConfig({
-    base: '/weatherDetector/',
+    base: process.env.GITHUB_ACTIONS === 'true' ? '/weatherDetector/' : '/',
     plugins: [react()],
 })
