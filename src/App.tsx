@@ -1,9 +1,11 @@
-import { useState } from 'react'
 import Weather from './weather'
 
 function App() {
     return (
-        <div className="min-h-screen bg-gradient-to-br from-blue-400 to-indigo-600 p-8 flex items-center justify-center">
+        <div className="aurora-shell min-h-screen p-4 sm:p-8 flex items-center justify-center overflow-hidden">
+            <div className="aurora-blob aurora-blob-1" />
+            <div className="aurora-blob aurora-blob-2" />
+            <div className="aurora-blob aurora-blob-3" />
             <Weather />
         </div>
     )

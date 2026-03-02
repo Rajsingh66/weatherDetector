@@ -2,6 +2,102 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  box-sizing: border-box;
+}
+
 body {
-  @apply bg-slate-100 text-slate-800;
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Sora", "Trebuchet MS", "Segoe UI", sans-serif;
+  color: #e2e8f0;
+  background: radial-gradient(1100px 700px at 10% -5%, #22d3ee44, transparent 60%),
+    radial-gradient(900px 600px at 90% 10%, #0ea5e944, transparent 60%),
+    linear-gradient(130deg, #0f172a 0%, #1d4ed8 45%, #0f172a 100%);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.aurora-shell {
+  position: relative;
+  isolation: isolate;
+}
+
+.aurora-blob {
+  position: absolute;
+  z-index: 0;
+  border-radius: 9999px;
+  filter: blur(58px);
+  opacity: 0.68;
+  transform: translate3d(0, 0, 0);
+}
+
+.aurora-blob-1 {
+  width: 18rem;
+  height: 18rem;
+  top: -2rem;
+  left: -2rem;
+  background: #22d3ee;
+  animation: aurora-float-a 16s ease-in-out infinite;
+}
+
+.aurora-blob-2 {
+  width: 20rem;
+  height: 20rem;
+  bottom: -4rem;
+  right: -2rem;
+  background: #38bdf8;
+  animation: aurora-float-b 18s ease-in-out infinite;
+}
+
+.aurora-blob-3 {
+  width: 15rem;
+  height: 15rem;
+  top: 35%;
+  right: 30%;
+  background: #a5f3fc;
+  animation: aurora-float-c 14s ease-in-out infinite;
+}
+
+.glass-card {
+  backdrop-filter: blur(18px);
+  background: linear-gradient(
+      160deg,
+      rgba(255, 255, 255, 0.26),
+      rgba(255, 255, 255, 0.08)
+    ),
+    rgba(15, 23, 42, 0.42);
+  box-shadow: 0 22px 60px rgba(2, 6, 23, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+}
+
+@keyframes aurora-float-a {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(2.3rem, 1.4rem) scale(1.08);
+  }
+}
+
+@keyframes aurora-float-b {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-1.8rem, -2rem) scale(1.06);
+  }
+}
+
+@keyframes aurora-float-c {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(1.4rem, -1.6rem) scale(1.1);
+  }
 }
